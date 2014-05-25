@@ -36,6 +36,6 @@ run <- function() {
         }
         tidydataset$V2 <- NULL #Delete the temporary label column "V2"
         
-        #write the .csv file
-        write.csv(tidydataset,"tidydataset.csv")
+        #write the .txt file
+        write.table(tidydataset,"tidydataset.txt")
 }
