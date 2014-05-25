@@ -28,7 +28,7 @@ run <- function() {
         meltF<-melt(F, id=c("Subject", "Activity"))
         dcastF<-dcast(meltF,Subject+Activity ~ variable,fun.aggregate=mean)
         
-        #Replace activity numbers with Activity names from activity_lables
+        #Replace activity numbers with Activity names from activity_labels
         tidydataset <- merge(dcastF, activity_labels, by.x="Activity", by.y="V1")
         for (i in 1:nrow(tidydataset)) {
                 tidydataset$Activity <- factor((tidydataset$Activity[i]),
